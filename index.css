@@ -1,17 +1,88 @@
-header{
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Montserrat:ital@0;1&family=Poppins:wght@400;500&family=Silkscreen:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Montserrat:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Silkscreen:wght@400;700&display=swap');
 
+body{
+background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(https://images.unsplash.com/photo-1616249022368-e3ce55dd3bbb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+width: 100%;
+height: 100vh;
+background-size: cover;
+}
+
+header{
 position:  fixed;
 top: 0;
 left: 0;
-width: 100%;
-padding:  20px;
+width: 95%;
+padding: 20px;
+padding-left: 40px;
 
 }
 
 header .navbar{
 display: flex;
-align-items: 1200px;
+align-items: center;
 margin: 0 auto;
 justify-content: space-between;
 
+}
+.navbar .menu-links{    
+font-family: Poppins, sans-serif;
+display: flex;
+gap: 40px;
+}
+.navbar a {
+    
+color: #fff;
+text-decoration: none;
+}
+
+.navbar .logo{
+font-family: 'Gloria Hallelujah', cursive;
+font-size: 3.1rem;
+font-weight: 600;
+
+}
+
+.intro{
+     font-family: Poppins, sans-serif;
+height:  100vh;
+color: #fff;
+display: flex;
+align-items: center;
+padding: 0 20px;
+
+}
+
+.intro .content{
+font: 3rem;
+max-width:  600px;
+padding-left: 50px;
+
+}
+
+.intro .content h1{
+    font-size: 3rem;
+}
+
+.intro .content p{
+    font-size: 20px;
+
+}
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: #286d2b;
 }
