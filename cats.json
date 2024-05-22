@@ -1,0 +1,31 @@
+[
+
+{
+    "id": 1,
+    "name": "Harry",
+    "description": "Gets mad easily, likes Churus and very sleepy",
+    "image": "https://www.vidavetcare.com/wp-content/uploads/sites/234/2022/04/mixed-breed-cat-breed-info.jpeg"
+
+},
+{
+
+    "id": 2,
+    "name": "Mr Big",
+    "description": "Curious, playful and surly",
+    "image": "https://images.pexels.com/photos/19902540/pexels-photo-19902540/free-photo-of-norwegian-forest-cat.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+
+
+},
+{
+
+    "id": 3,
+    "name": "Oreo",
+    "description": "Chill, quite and likes solarbeams",
+    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/369973353/medium.jpg"
+
+
+}
+
+
+
+]

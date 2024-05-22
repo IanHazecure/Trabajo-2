@@ -44,6 +44,10 @@ gap: 40px;
 .navbar a {
 color: #fff;
 text-decoration: none;
+transition: color 0.5s ease;
+}
+.navbar a:hover {
+    color: rgb(76, 174, 79);; 
 }
 
 .navbar ul {
@@ -91,7 +95,7 @@ padding-left: 120px;
 }
 
 #loginBtn {
-    background-color: #4CAF50;
+    background-color: rgb(76, 174, 79);
     border: none;
     color: white;
     padding: 15px 32px;
@@ -334,13 +338,16 @@ input[type="number"]#edad {
 
 
 .card {
-justify-content: space-between;
+    justify-content: space-between;
     background-color: #ddd;
     width: 300px;
     border-radius: 5px;
     overflow: hidden;
     margin: 50px;
     box-shadow: 5px 5px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .card img {
@@ -366,3 +373,92 @@ justify-content: space-between;
     font-weight: 500;
 
 }
+
+.addbtn{
+    font-family: Poppins, sans-serif;
+    background-color: rgb(76, 174, 79);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 20px;
+    transition-duration: 0.4s;
+
+}
+.addbtn:hover {
+    background-color: #286d2b;
+}
+
+.icon-cart{
+position: relative;
+    cursor: pointer;
+}
+
+.icon-cart span{
+    font-family: Poppins, sans-serif;
+    display: flex;
+    width: 20px;
+    height: 20px;  
+    background-color: red;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 1px;
+    position: absolute;
+    border-radius: 50%;
+    top: 45%;
+    left: 60%;
+}
+
+.cartTab{
+font-family: Poppins, sans-serif;
+width: 480px;
+background-color: #333;
+color: white;
+position: fixed;
+display: grid;
+inset: 0 -500px 0 auto;
+grid-template-rows: 70px 1fr 70px;
+
+}
+
+body.showCart .cartTab{
+inset: 0 0 0 auto;
+    
+}
+
+.cartTab h1{
+padding: 20px;
+margin: 0;
+font-weight: 300;
+}
+.cartTab .btn{
+    
+display: grid;
+grid-template-columns: repeat(2,1fr);
+}
+
+.cartTab .btn button{
+background-color:rgb(63, 156, 83);
+border: none;
+font-family: Poppins, sans-serif;
+font-weight: 500;
+cursor: pointer
+}
+ 
+.cartTab .listCart .catItem img{
+width: 100%;
+}
+
+.cartTab .listCart .catItem{
+display: grid;
+grid-template-columns: 100px 100px;
+align-items: center;
+gap: 20px;
+}
+

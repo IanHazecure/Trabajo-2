@@ -47,13 +47,6 @@ $(document).ready(function(){
     });
 });
 
-document.getElementById("loginBtn").addEventListener("click", function () {
-    document.querySelector(".loginPopup").style.display = "flex";
-});
-
-document.getElementById("closeBtn").addEventListener("click", function () {
-    document.querySelector(".loginPopup").style.display = "none";
-});
 
 
 $(document).ready(function () {
