@@ -109,20 +109,26 @@ padding-left: 120px;
 }
 
 .login-form {
+    
     background-color: #f2f2f2;
     padding: 20px;
     margin: 0 auto;
-    width: 300px;
+    width: 500px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+.login-form h1 {
+    text-align: center;
+    color: black
+}
+
 .login-form h2 {
     text-align: center;
     color: black
 }
 
 .close {
-padding-left: 280px;
+padding-left: 450px;
     font-size: 30px;
     font-weight: bold;
     color: #aaa;
@@ -166,18 +172,119 @@ padding-left: 280px;
     background-color: #45a049;
 
 }
+.image-element{
+  
+}
+.carouselImg{
 
+
+}
+
+.image-element{
+
+    display: flex; 
+    justify-content: space-between;
+ 
+
+}
 .carousel {
-    width: 100%;
+    max-width: 500px;
+    max-height: 500px;
     overflow: hidden;
-    box-shadow: 5px 5px 5px 5px black;
 }
 
 .carousel .slide {
-    width: 100%;
+    width: 100px;
     display: none;
+
 }
 
 .carousel .slide.active {
     display: block;
+}
+
+#prevBtn {
+    background-color: #008CBA;
+    border: none; 
+    color: white;
+    padding: 5px 5px; 
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer; 
+    margin: 200px 10px;
+    transition-duration: 0.4s; 
+
+}
+
+#prevBtn:hover {
+    background-color: white;
+    color: black; 
+}
+
+#nextBtn {
+    background-color: #008CBA;
+    border: none; 
+    color: white;
+    padding: 5px 5px; 
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer; 
+    margin: 200px 10px;
+    transition-duration: 0.4s;   
+}
+
+#nextBtn:hover {
+    background-color: white;
+    color: black; 
+}
+
+footer {
+    color: #6c757d;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+button[type="submit"] {
+    background-color: #008CBA; /* Blue background */
+    border: none; /* Remove border */
+    color: white; /* White text */
+    padding: 15px 32px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer; /* Mouse pointer on hover */
+    transition-duration: 0.4s; /* Transition effect */
+}
+
+button[type="submit"]:hover {
+    background-color: white; /* White background */
+    color: black; /* Black text */
+}
+
+select#genero {
+    background-color: #008CBA; /* Blue background */
+    border: none; /* Remove border */
+    color: white; /* White text */
+    padding: 15px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer; /* Mouse pointer on hover */
+    transition-duration: 0.4s; /* Transition effect */
+}
+
+select#genero:hover {
+    background-color: white; /* White background */
+    color: black; /* Black text */
 }

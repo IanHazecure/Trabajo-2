@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>document</title>
     <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="validation.js"></script>
 </head>
 
 <body>
@@ -15,7 +17,7 @@
             <a href="#" class="logo">Gattos<span>.</span></a>
             <ul class="menu-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="catalog.html">Catalog</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#about">About us</a></li>
                 <li><button id="loginBtn">Register</button></li>
@@ -28,44 +30,70 @@
             <div class="content">
                 <h1>WELCOME TO GATTOS</h1>
                 <p>
-                   the ultimate online marketplace for cat enthusiasts! At Gattos, we specialize in connecting loving homes with beautiful, healthy cats from reputable breeders. Whether you're looking for a playful kitten, a majestic adult cat, or a specific breed, Gattos is your one-stop shop for all things feline.
+                    the ultimate online marketplace for cat enthusiasts! At Gattos, we specialize in connecting loving
+                    homes with beautiful, healthy cats from reputable breeders. Whether you're looking for a playful
+                    kitten, a majestic adult cat, or a specific breed, Gattos is your one-stop shop for all things
+                    feline.
                 </p>
             </div>
             <div class="loginPopup">
-                <form class="login-form">
+                <div class="login-form">
                     <span class="close" id="closeBtn">&times;</span>
-                    <h2>Register</h2>
-                    <label for="uname">Username:</label>
-                    <input type="text" id="uname" name="uname" required>
-                    <label for="psw">Password:</label>
-                    <input type="password" id="psw" name="psw" required>
-                    <input type="submit" value="Register">
-                </form>
+                    <h1>Formulario de Registro</h1>
+                    <form id="registroForm">
+                        <label for="rut">Rut:</label>
+                        <input type="text" id="rut" name="rut"><br>
+                
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre"><br>
+                
+                        <label for="apellidoPaterno">Apellido Paterno:</label>
+                        <input type="text" id="apellidoPaterno" name="apellidoPaterno"><br>
+                
+                        <label for="apellidoMaterno">Apellido Materno:</label>
+                        <input type="text" id="apellidoMaterno" name="apellidoMaterno"><br>
+                
+                        <label for="edad">Edad:</label>
+                        <input type="number" id="edad" name="edad"><br>
+                
+                        <label for="genero">Género:</label>
+                        <select id="genero" name="genero">
+                            <option value="">Seleccione</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="femenino">Femenino</option>
+                            <option value="otro">Otro</option>
+                        </select><br>
+                
+                        <label for="celular">Celular:</label>
+                        <input type="text" id="celular" name="celular"><br>
+                
+                        <button type="submit">Registrar</button>
+                    
+                    </form>
+
+
+                
+                </div>
             </div>
         </div>
+        
         <div class="image-element">
+            <button id="prevBtn"><</button>
             <div class="carousel">
-                <div class="slide active">
-                    <img src="https://nmrcdn.s3.amazonaws.com/assets/787/assets/responsive/297000/297000/web_cat.jpg" alt="Image 1">
-                </div>
-                <div class="slide">
-                    <img src="https://live.staticflickr.com/2233/4218517831_7ecd5f876b.jpg" alt="Image 2">
-                </div>
-                <div class="slide">
-                    <img src="https://www.guildinsurance.com.au/images/librariesprovider3/breed-images/500x500/tabby-(1)-(1).jpg?sfvrsn=b28f650b_2" alt="Image 3">
-                </div>
-                <button id="prevBtn">Previous</button>
-    <button id="nextBtn">Next</button>
+                <img id="carouselImg" src="https://nmrcdn.s3.amazonaws.com/assets/787/assets/responsive/297000/297000/web_cat.jpg" alt="Carousel Image">
+
             </div>
+            <button id="nextBtn">></button>
         </div>
 
 
     </section>
-
+    <footer>
+        <p>Copyright &copy; 2024 Gattos Inc.</p>
+    </footer>
 
 </body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
     document.getElementById("loginBtn").addEventListener("click", function () {
@@ -76,29 +104,27 @@
         document.querySelector(".loginPopup").style.display = "none";
     });
 
-    $(document).ready(function() {
-    var currentSlide = 0;
-    var slides = $('.carousel .slide');
+   
 
-    function changeSlide(next) {
-        slides.eq(currentSlide).fadeOut(1000, function() {
-            $(this).removeClass('active');
+    $(document).ready(function () {
+        var currentSlide = 0;
+        var images = ['https://nmrcdn.s3.amazonaws.com/assets/787/assets/responsive/297000/297000/web_cat.jpg',
+            'https://live.staticflickr.com/2233/4218517831_7ecd5f876b.jpg',
+            'https://www.guildinsurance.com.au/images/librariesprovider3/breed-images/500x500/tabby-(1)-(1).jpg?sfvrsn=b28f650b_2'];
+
+        function changeSlide(next) {
+            currentSlide = (currentSlide + (next ? 1 : images.length - 1)) % images.length;
+            $('#carouselImg').attr('src', images[currentSlide]);
+        }
+
+        $('#prevBtn').click(function () {
+            changeSlide(false);
         });
 
-        currentSlide = (currentSlide + (next ? 1 : slides.length - 1)) % slides.length;
-
-        slides.eq(currentSlide).fadeIn(1000, function() {
-            $(this).addClass('active');
+        $('#nextBtn').click(function () {
+            changeSlide(true);
         });
-    }
-
-    $('#prevBtn').click(function() {
-        changeSlide(false);
     });
-
-    $('#nextBtn').click(function() {
-        changeSlide(true);
-    });
-});
 </script>
+
 </html>
