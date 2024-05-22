@@ -113,11 +113,12 @@ padding-left: 120px;
     background-color: #f2f2f2;
     padding: 20px;
     margin: 0 auto;
-    width: 500px;
+    width: 450px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 .login-form h1 {
+    margin: 0 auto;
     text-align: center;
     color: black
 }
@@ -128,7 +129,7 @@ padding-left: 120px;
 }
 
 .close {
-padding-left: 450px;
+padding-left: 400px;
     font-size: 30px;
     font-weight: bold;
     color: #aaa;
@@ -266,12 +267,12 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: white; /* White background */
+    background-color: hsl(195, 95%, 32%); /* White background */
     color: black; /* Black text */
 }
 
 select#genero {
-    background-color: #008CBA; /* Blue background */
+    background-color: hsl(195, 100%, 36%); /* Blue background */
     border: none; /* Remove border */
     color: white; /* White text */
     padding: 15px; /* Some padding */
@@ -285,6 +286,72 @@ select#genero {
 }
 
 select#genero:hover {
-    background-color: white; /* White background */
+    background-color: hsl(195, 95%, 32%); /* White background */
     color: black; /* Black text */
+}
+
+.form-group{
+
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    justify-content: space-between;
+
+
+}
+
+label[for="edad"] {
+    font-size: 16px;
+    color: #333;
+}
+
+input[type="number"]#edad {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.container {
+    padding: 20px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.card {
+justify-content: space-between;
+    background-color: #ddd;
+    width: 300px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 50px;
+    box-shadow: 5px 5px 5px;
+}
+
+.card img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    margin: 3px;
+    align-items: center;
+    text-align: center;
+    height: 150px;
+}
+
+.card-content h1{
+    font-family: Poppins, sans-serif;
+}
+
+.card-content h2{
+    padding-bottom: 50px;
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+
 }

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="validation.js"></script>
+</head>
+
+
+<header>
+    <div class="navbar">
+        <a href="#" class="logo">Gattos<span>.</span></a>
+        <ul class="menu-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="catalog.html">Catalog</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><button id="loginBtn">Register</button></li>
+        </ul>
+    </div>
+</header>
+
+<body>
+    <div class="container">
+
+        <div class="card">
+            <img src="https://www.vidavetcare.com/wp-content/uploads/sites/234/2022/04/mixed-breed-cat-breed-info.jpeg" alt="Placeholder Image">
+            <div class="card-content">
+                <h1>Harry</h1>
+                <h2>Gets mad easily, likes Churus and very sleepy</h2>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://images.pexels.com/photos/19902540/pexels-photo-19902540/free-photo-of-norwegian-forest-cat.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Placeholder Image">
+            <div class="card-content">
+                <h1>Mr Big</h1>
+                <h2>Curious, playful and surly</h2>
+            </div>
+        </div>
+        
+        <div class="card">
+            <img src="https://inaturalist-open-data.s3.amazonaws.com/photos/369973353/medium.jpg" alt="Placeholder Image">
+            <div class="card-content">
+                <h1>Oreo</h1>
+                <h2>Chill, quite and likes 
+                    solarbeams</h2>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://irvinevalleyvet.com/wp-content/uploads/2021/10/white-cat-head-turned.jpg" alt="Placeholder Image">
+            <div class="card-content">
+                <h1>Chip</h1>
+                <h2>Adorable, friendly and playful. He is deaf</h2>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <section class="intro">
+        <div class="loginPopup">
+            <div class="login-form">
+                <span class="close" id="closeBtn">&times;</span>
+                <h1>Registration Form</h1>
+                <form id="registroForm">
+                    <label for="rut">Rut:</label>
+                    <input type="text" id="rut" name="rut"><br>
+
+                    <label for="nombre">Name:</label>
+                    <input type="text" id="nombre" name="nombre"><br>
+
+                    <label for="apellidoPaterno">Last name:</label>
+                    <input type="text" id="apellidoPaterno" name="apellidoPaterno"><br>
+
+                    <label for="apellidoMaterno">Matriname:</label>
+                    <input type="text" id="apellidoMaterno" name="apellidoMaterno"><br>
+                    <div class="form-group">
+                        <label for="edad">Age:</label>
+                        <input type="number" id="edad" name="edad"><br>
+
+                        <label for="genero">Gender:</label>
+                        <select id="genero" name="genero">
+                            <option value="">Opcions</option>
+                            <option value="masculino">Male</option>
+                            <option value="femenino">Female</option>
+                            <option value="otro">uhg...</option>
+                        </select><br>
+                    </div>
+
+                    <label for="celular">Phone:</label>
+                    <input type="text" id="celular" name="celular"><br>
+
+                    <button type="submit">Register</button>
+
+                </form>
+
+            </div>
+        </div>
+
+
+
+
+    </section>
+    <footer>
+        <p>Copyright &copy; 2024 Gattos Inc.</p>
+    </footer>
+
+</body>
+
+
+<script>
+    document.getElementById("loginBtn").addEventListener("click", function () {
+        document.querySelector(".loginPopup").style.display = "flex";
+    });
+
+    document.getElementById("closeBtn").addEventListener("click", function () {
+        document.querySelector(".loginPopup").style.display = "none";
+    });
+
+
+</script>
+
+</html>

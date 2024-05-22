@@ -46,3 +46,33 @@ $(document).ready(function(){
         // Aquí podrías enviar el formulario utilizando AJAX o cualquier otro método
     });
 });
+
+document.getElementById("loginBtn").addEventListener("click", function () {
+    document.querySelector(".loginPopup").style.display = "flex";
+});
+
+document.getElementById("closeBtn").addEventListener("click", function () {
+    document.querySelector(".loginPopup").style.display = "none";
+});
+
+
+$(document).ready(function () {
+    var currentSlide = 0;
+    var images = ['https://nmrcdn.s3.amazonaws.com/assets/787/assets/responsive/297000/297000/web_cat.jpg',
+        'https://live.staticflickr.com/2233/4218517831_7ecd5f876b.jpg',
+        'https://www.guildinsurance.com.au/images/librariesprovider3/breed-images/500x500/tabby-(1)-(1).jpg?sfvrsn=b28f650b_2'];
+
+    function changeSlide(next) {
+        currentSlide = (currentSlide + (next ? 1 : images.length - 1)) % images.length;
+        $('#carouselImg').attr('src', images[currentSlide]);
+    }
+
+    $('#prevBtn').click(function () {
+        changeSlide(false);
+    });
+
+    $('#nextBtn').click(function () {
+        changeSlide(true);
+    });
+});
+

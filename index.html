@@ -11,20 +11,21 @@
     <script src="validation.js"></script>
 </head>
 
-<body>
-    <header>
-        <div class="navbar">
-            <a href="#" class="logo">Gattos<span>.</span></a>
-            <ul class="menu-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="catalog.html">Catalog</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#about">About us</a></li>
-                <li><button id="loginBtn">Register</button></li>
-            </ul>
-        </div>
-    </header>
 
+<header>
+    <div class="navbar">
+        <a href="#" class="logo">Gattos<span>.</span></a>
+        <ul class="menu-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="catalog.html">Catalog</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><button id="loginBtn">Register</button></li>
+        </ul>
+    </div>
+</header>
+
+<body>
     <section class="intro">
         <div class="text-element">
             <div class="content">
@@ -39,51 +40,55 @@
             <div class="loginPopup">
                 <div class="login-form">
                     <span class="close" id="closeBtn">&times;</span>
-                    <h1>Formulario de Registro</h1>
+                    <h1>Registration Form</h1>
                     <form id="registroForm">
                         <label for="rut">Rut:</label>
                         <input type="text" id="rut" name="rut"><br>
-                
-                        <label for="nombre">Nombre:</label>
+
+                        <label for="nombre">Name:</label>
                         <input type="text" id="nombre" name="nombre"><br>
-                
-                        <label for="apellidoPaterno">Apellido Paterno:</label>
+
+                        <label for="apellidoPaterno">Last name:</label>
                         <input type="text" id="apellidoPaterno" name="apellidoPaterno"><br>
-                
-                        <label for="apellidoMaterno">Apellido Materno:</label>
+
+                        <label for="apellidoMaterno">Matriname:</label>
                         <input type="text" id="apellidoMaterno" name="apellidoMaterno"><br>
-                
-                        <label for="edad">Edad:</label>
-                        <input type="number" id="edad" name="edad"><br>
-                
-                        <label for="genero">Género:</label>
-                        <select id="genero" name="genero">
-                            <option value="">Seleccione</option>
-                            <option value="masculino">Masculino</option>
-                            <option value="femenino">Femenino</option>
-                            <option value="otro">Otro</option>
-                        </select><br>
-                
-                        <label for="celular">Celular:</label>
+                        <div class="form-group">
+                            <label for="edad">Age:</label>
+                            <input type="number" id="edad" name="edad"><br>
+
+                            <label for="genero">Gender:</label>
+                            <select id="genero" name="genero">
+                                <option value="">Opcions</option>
+                                <option value="masculino">Male</option>
+                                <option value="femenino">Female</option>
+                                <option value="otro">uhg...</option>
+                            </select><br>
+                        </div>
+
+                        <label for="celular">Phone:</label>
                         <input type="text" id="celular" name="celular"><br>
-                
-                        <button type="submit">Registrar</button>
-                    
+
+                        <button type="submit">Register</button>
+
                     </form>
 
 
-                
+
                 </div>
             </div>
         </div>
-        
-        <div class="image-element">
-            <button id="prevBtn"><</button>
-            <div class="carousel">
-                <img id="carouselImg" src="https://nmrcdn.s3.amazonaws.com/assets/787/assets/responsive/297000/297000/web_cat.jpg" alt="Carousel Image">
 
-            </div>
-            <button id="nextBtn">></button>
+        <div class="image-element">
+            <button id="prevBtn">
+                << /button>
+                    <div class="carousel">
+                        <img id="carouselImg"
+                            src="https://nmrcdn.s3.amazonaws.com/assets/787/assets/responsive/297000/297000/web_cat.jpg"
+                            alt="Carousel Image">
+
+                    </div>
+                    <button id="nextBtn">></button>
         </div>
 
 
@@ -104,7 +109,7 @@
         document.querySelector(".loginPopup").style.display = "none";
     });
 
-   
+
 
     $(document).ready(function () {
         var currentSlide = 0;
