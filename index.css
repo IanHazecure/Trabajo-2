@@ -31,9 +31,12 @@ display: flex;
 gap: 40px;
 }
 .navbar a {
-    
 color: #fff;
 text-decoration: none;
+}
+
+.navbar ul {
+    list-style-type: none;
 }
 
 .navbar .logo{
@@ -69,7 +72,7 @@ padding-left: 50px;
 
 }
 
-button {
+#loginBtn {
     background-color: #4CAF50;
     border: none;
     color: white;
@@ -82,7 +85,77 @@ button {
     border-radius: 4px;
     transition-duration: 0.4s;
 }
-
-button:hover {
+#loginBtn:hover {
     background-color: #286d2b;
+}
+
+.loginPopup {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.login-form {
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin: 0 auto;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.login-form h2 {
+    text-align: center;
+    color: black
+}
+
+.close {
+padding-left: 280px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+.login-form label {
+    display: block;
+    margin: 10px 0 5px 0;
+    color: black;
+}
+
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+
+}
+
+.login-form input[type="submit"] {
+    background-color: #4CAF50;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    font-family: Poppins, sans-serif;
+    width: 100%;
+}
+
+.login-form input[type="submit"]:hover {
+    background-color: #45a049;
+
 }

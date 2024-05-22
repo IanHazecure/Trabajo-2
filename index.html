@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -17,7 +18,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#about">About us</a></li>
-                <li><button id="loginBtn">Login</button></li>
+                <li><button id="loginBtn">Register</button></li>
             </ul>
         </div>
     </header>
@@ -29,9 +30,33 @@
                 WE ARE A TEAM OF TALENTED DESIGNERS MAKING THE BEST WEBSITES
             </p>
         </div>
+        <div class="loginPopup">
+            <form class="login-form">
+                <span class="close" id="closeBtn">&times;</span>
+                <h2>Register</h2>
+                <label for="uname">Username:</label>
+                <input type="text" id="uname" name="uname" required>
+                <label for="psw">Password:</label>
+                <input type="password" id="psw" name="psw" required>
+                <input type="submit" value="Register">
+            </form>
+        </div>
+
     </section>
 </body>
 
-</html>
+<script>
+
+document.getElementById("loginBtn").addEventListener("click", function() {
+    document.querySelector(".loginPopup").style.display = "flex";
+});
+
+
+document.getElementById("closeBtn").addEventListener("click", function() {
+    document.querySelector(".loginPopup").style.display = "none";
+});
+
+</script>
 
 </html>
+
