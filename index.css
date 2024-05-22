@@ -1,0 +1,17 @@
+header{
+
+position:  fixed;
+top: 0;
+left: 0;
+width: 100%;
+padding:  20px;
+
+}
+
+header .navbar{
+display: flex;
+align-items: 1200px;
+margin: 0 auto;
+justify-content: space-between;
+
+}
