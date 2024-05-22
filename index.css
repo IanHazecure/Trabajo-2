@@ -53,19 +53,26 @@ color: #fff;
 display: flex;
 align-items: center;
 padding: 0 20px;
+justify-content: space-between;
+
 
 }
 
 .intro .content{
 font: 3rem;
-max-width:  600px;
-padding-left: 50px;
+max-width:  650px;
+padding-left: 120px;
 
+
+}
+.intro .image-element{
+    padding-right: 170px;
 }
 
 .intro .content h1{
     font-size: 3rem;
 }
+
 
 .intro .content p{
     font-size: 20px;
@@ -158,4 +165,19 @@ padding-left: 280px;
 .login-form input[type="submit"]:hover {
     background-color: #45a049;
 
+}
+
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 5px 5px 5px 5px black;
+}
+
+.carousel .slide {
+    width: 100%;
+    display: none;
+}
+
+.carousel .slide.active {
+    display: block;
 }

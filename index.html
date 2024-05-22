@@ -22,41 +22,83 @@
             </ul>
         </div>
     </header>
-    
+
     <section class="intro">
-        <div class="content">
-            <h1>WELCOME TO GATTOS</h1>
-            <p>
-                WE ARE A TEAM OF TALENTED DESIGNERS MAKING THE BEST WEBSITES
-            </p>
+        <div class="text-element">
+            <div class="content">
+                <h1>WELCOME TO GATTOS</h1>
+                <p>
+                   the ultimate online marketplace for cat enthusiasts! At Gattos, we specialize in connecting loving homes with beautiful, healthy cats from reputable breeders. Whether you're looking for a playful kitten, a majestic adult cat, or a specific breed, Gattos is your one-stop shop for all things feline.
+                </p>
+            </div>
+            <div class="loginPopup">
+                <form class="login-form">
+                    <span class="close" id="closeBtn">&times;</span>
+                    <h2>Register</h2>
+                    <label for="uname">Username:</label>
+                    <input type="text" id="uname" name="uname" required>
+                    <label for="psw">Password:</label>
+                    <input type="password" id="psw" name="psw" required>
+                    <input type="submit" value="Register">
+                </form>
+            </div>
         </div>
-        <div class="loginPopup">
-            <form class="login-form">
-                <span class="close" id="closeBtn">&times;</span>
-                <h2>Register</h2>
-                <label for="uname">Username:</label>
-                <input type="text" id="uname" name="uname" required>
-                <label for="psw">Password:</label>
-                <input type="password" id="psw" name="psw" required>
-                <input type="submit" value="Register">
-            </form>
+        <div class="image-element">
+            <div class="carousel">
+                <div class="slide active">
+                    <img src="https://nmrcdn.s3.amazonaws.com/assets/787/assets/responsive/297000/297000/web_cat.jpg" alt="Image 1">
+                </div>
+                <div class="slide">
+                    <img src="https://live.staticflickr.com/2233/4218517831_7ecd5f876b.jpg" alt="Image 2">
+                </div>
+                <div class="slide">
+                    <img src="https://www.guildinsurance.com.au/images/librariesprovider3/breed-images/500x500/tabby-(1)-(1).jpg?sfvrsn=b28f650b_2" alt="Image 3">
+                </div>
+                <button id="prevBtn">Previous</button>
+    <button id="nextBtn">Next</button>
+            </div>
         </div>
+
 
     </section>
+
+
 </body>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <script>
+    document.getElementById("loginBtn").addEventListener("click", function () {
+        document.querySelector(".loginPopup").style.display = "flex";
+    });
 
-document.getElementById("loginBtn").addEventListener("click", function() {
-    document.querySelector(".loginPopup").style.display = "flex";
+    document.getElementById("closeBtn").addEventListener("click", function () {
+        document.querySelector(".loginPopup").style.display = "none";
+    });
+
+    $(document).ready(function() {
+    var currentSlide = 0;
+    var slides = $('.carousel .slide');
+
+    function changeSlide(next) {
+        slides.eq(currentSlide).fadeOut(1000, function() {
+            $(this).removeClass('active');
+        });
+
+        currentSlide = (currentSlide + (next ? 1 : slides.length - 1)) % slides.length;
+
+        slides.eq(currentSlide).fadeIn(1000, function() {
+            $(this).addClass('active');
+        });
+    }
+
+    $('#prevBtn').click(function() {
+        changeSlide(false);
+    });
+
+    $('#nextBtn').click(function() {
+        changeSlide(true);
+    });
 });
-
-
-document.getElementById("closeBtn").addEventListener("click", function() {
-    document.querySelector(".loginPopup").style.display = "none";
-});
-
 </script>
-
 </html>
-
