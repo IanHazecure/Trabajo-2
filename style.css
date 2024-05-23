@@ -492,3 +492,24 @@ footer .column > a:hover{
 .login-form button[type="submit"]:hover {
     opacity: 0.8; 
 }
+
+.container{
+padding: 20px;
+display: center;
+justify-content: center;
+text-align: center;
+
+
+}
+
+.container h1{
+justify-content: center;
+align-items: center;
+padding: 20px;
+
+}
+.container h2{
+    padding: 20px;
+    justify-content: center;
+    font-weight: 100;
+}
