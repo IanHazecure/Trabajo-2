@@ -13,35 +13,43 @@ $(document).ready(function(){
         var celular = $("#celular").val();
 
    
-        if(rut.length < 9 || rut.length > 10){
-            alert("El Rut debe tener entre 9 y 10 caracteres.");
+        if(!/^[\d]+[kK]?$/g.test(rut)){
+            alert("Rut must only contain numbers and optionally end with a 'k'.");
             return;
         }
 
+        
+        // ^ asserts the start of a line.
+        // [\d]+ matches one or more digits (0-9).
+        // [kK]? matches either a 'k' or 'K', and the ? makes it optional.
+        // $ asserts the end of a line.
+        // g is a flag that means global, so the pattern will be searched in the whole string.
 
-        if(nombre.length < 3 || nombre.length > 20 ||
-            apellidoPaterno.length < 3 || apellidoPaterno.length > 20 ||
-            apellidoMaterno.length < 3 || apellidoMaterno.length > 20){
-            alert("El Nombre y los Apellidos deben tener entre 3 y 20 caracteres.");
-            return;
-        }
+
+
+        if(nombre.length < 3 || nombre.length > 20 || !isNaN(nombre) ||
+    apellidoPaterno.length < 3 || apellidoPaterno.length > 20 ||
+    apellidoMaterno.length < 3 || apellidoMaterno.length > 20){
+    alert("The First and Last Name must be between 3 and 20 characters and must not be numbers.");
+    return;
+}
 
 
 
     
         if(genero === ""){
-            alert("Por favor, seleccione un Género.");
+            alert("You must select a gender.");
             return;
         }
 
 
         if(celular.length < 9 || celular.length > 12){
-            alert("El Celular debe tener entre 9 y 12 caracteres.");
+            alert("Phone number must be 9 to 12 characters.");
             return;
         }
 
 
-        alert("¡Registro exitoso!");
+        alert("Successful registration!");
 
     });
 });

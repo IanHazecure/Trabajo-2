@@ -4,32 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document2</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="validation.js"></script>
 </head>
 
-<header>
-
-    <body class="">
-        <div class="navbar">
-            <a href="#" class="logo">Gattos<span>.</span></a>
-            <ul class="menu-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="test.html">CATalog</a></li>
-                <li><a href="about.html">About us</a></li>
-                <li><button id="loginBtn">Register</button></li>
-                <div class="icon-cart">
-                   
-                </div>
-            </ul>
+<div class="navbar">
+    <a href="#" class="logo">Gattos<span>.</span></a>
+    <ul class="menu-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="test.html">CATalog</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><button id="loginBtn">Register</button></li>
+        <div class="icon-cart">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white"
+                    viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z" />
+                </svg>
+            <span>0</span>
         </div>
+</div>
 
 
+<body class="">
 
-</header>
+    <div class="container">
+        <header>
+  
+        </header>
+        <div class="listProduct">
+
+        </div>
+    </div>
+    <div class="cartTab">
+        <h1>Shopping Cart</h1>
+        <div class="listCart">
+
+        </div>
+        <div class="btn">
+            <button class="close">CLOSE</button>
+            <button class="checkOut">Check Out</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
 
 <section class="intro">
     <div class="loginPopup">
@@ -70,45 +93,10 @@
 
         </div>
     </div>
-
-    <div class="about">
-
-        <h1>Gattos: Cada hogar necesita un amor felino </h1>
-        <h2>
-
-            Nacemos en mayo de 2024 con una misión: encontrar familias amorosas para gatos rescatados.
-
-            En Gattos, creemos que cada gato merece un hogar cálido y lleno de cariño. Por eso, nos dedicamos a crear
-            perfiles detallados de nuestros felinos, destacando su personalidad única y sus necesidades especiales.</h2>
-
-        <h3>¿Cómo funciona?</h3>
-
-        <ul>Explora los perfiles: Navega por nuestra página web y conoce a nuestros adorables gatos. Cada perfil incluye
-        fotos, descripciones detalladas de su personalidad y necesidades</ul>
-
-        <ul>Encuentra tu match: Tómate tu tiempo para conocer a cada gatito y descubre cuál se adapta mejor a tu estilo de
-        vida y hogar. Busca un compañero juguetón, cariñoso o tranquilo, ¡hay un gato perfecto para ti!</ul>
-
-        <ul>Adopta y enamórate: Si encuentras a tu nuevo mejor amigo peludo, ponte en contacto con nosotros para iniciar el
-        proceso de adopción. Te guiaremos en cada paso y te brindaremos toda la información necesaria para que la
-        llegada de tu nuevo compañero sea una experiencia feliz y exitosa.</ul></ulAdopta>
-
-        <ul>En Gattos, creemos en el poder transformador del amor gatuno. Unimos corazones peludos con familias que buscan
-        compañía y cariño.</ul>
-
-        <h4> ¡Abre tu corazón y dale la oportunidad a un gato rescatado de encontrar su hogar para siempre!
-
-            Visita nuestra página web y empieza a buscar a tu nuevo compañero de aventuras felinas.
-
-            ¡Juntos podemos cambiar la vida de muchos gatos!</h4>
-    </div>
-
-
 </section>
 <footer>
     <p>Copyright &copy; 2024 Gattos Inc.</p>
 </footer>
-
 <script>
     document.getElementById("loginBtn").addEventListener("click", function () {
         document.querySelector(".loginPopup").style.display = "flex";
@@ -118,6 +106,27 @@
         document.querySelector(".loginPopup").style.display = "none";
     });
 
+
+
+    $(document).ready(function () {
+        var currentSlide = 0;
+        var images = ['https://nmrcdn.s3.amazonaws.com/assets/787/assets/responsive/297000/297000/web_cat.jpg',
+            'https://live.staticflickr.com/2233/4218517831_7ecd5f876b.jpg',
+            'https://www.guildinsurance.com.au/images/librariesprovider3/breed-images/500x500/tabby-(1)-(1).jpg?sfvrsn=b28f650b_2'];
+
+        function changeSlide(next) {
+            currentSlide = (currentSlide + (next ? 1 : images.length - 1)) % images.length;
+            $('#carouselImg').attr('src', images[currentSlide]);
+        }
+
+        $('#prevBtn').click(function () {
+            changeSlide(false);
+        });
+
+        $('#nextBtn').click(function () {
+            changeSlide(true);
+        });
+    });
 
 </script>
 
