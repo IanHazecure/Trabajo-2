@@ -52,6 +52,7 @@ nav{
 }
 
 .link a{
+    position: relative;
     padding-bottom: 0.75rem;
     color: #fff;
 }
@@ -216,6 +217,7 @@ header .shopping span{
 .listCard .count{
     margin: 0 10px;
 }
+
 
 .loginPopup {
     display: none;
