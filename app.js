@@ -16,40 +16,59 @@ closeShopping.addEventListener('click', ()=>{
 let products = [
     {
         id: 1,
-        name: 'PRODUCT NAME 1',
-        image: 'https://i.pinimg.com/564x/00/90/aa/0090aa0bfdd73eea5cc79daaf19596c9.jpg',
-        price: 120000
+        name: 'Calathea Orbifolia',
+        image: '1.PNG',
+        price: 28000
     },
     {
         id: 2,
-        name: 'PRODUCT NAME 2',
+        name: 'Sanseviera',
         image: '2.PNG',
-        price: 120000
+        price: 15000
     },
     {
         id: 3,
-        name: 'PRODUCT NAME 3',
+        name: 'Monstera',
         image: '3.PNG',
-        price: 220000
+        price: 25000
     },
     {
         id: 4,
-        name: 'PRODUCT NAME 4',
+        name: 'Calathea Medallion',
         image: '4.PNG',
-        price: 123000
+        price: 12000
     },
     {
         id: 5,
-        name: 'PRODUCT NAME 5',
+        name: 'Pilea Peperomioides',
         image: '5.PNG',
-        price: 320000
+        price: 10000
     },
     {
         id: 6,
-        name: 'PRODUCT NAME 6',
+        name: 'Areca',
         image: '6.PNG',
-        price: 120000
+        price: 17000
+    },
+    {
+        id: 7,
+        name: 'Areca',
+        image: '6.PNG',
+        price: 17000
+    },
+    {
+        id: 8,
+        name: 'Areca',
+        image: '6.PNG',
+        price: 17000
+    },
+    {
+        id: 9,
+        name: 'Areca',
+        image: '6.PNG',
+        price: 17000
     }
+   
 ];
 let listCards  = [];
 function initApp(){
