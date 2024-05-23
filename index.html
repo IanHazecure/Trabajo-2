@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   
 </head>
 
@@ -42,6 +44,40 @@
             <img src="https://cdn.pixabay.com/photo/2022/03/27/09/09/gardener-7094455_1280.png">
         </div>
     </header>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="registroForm">
+                <label for="rut">Rut:</label>
+                <input type="text" id="rut" name="rut"><br>
+        
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre"><br>
+        
+                <label for="apellidoPaterno">Apellido Paterno:</label>
+                <input type="text" id="apellidoPaterno" name="apellidoPaterno"><br>
+        
+                <label for="apellidoMaterno">Apellido Materno:</label>
+                <input type="text" id="apellidoMaterno" name="apellidoMaterno"><br>
+        
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad"><br>
+        
+                <label for="genero">Género:</label>
+                <select id="genero" name="genero">
+                    <option value="">Seleccione</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                </select><br>
+        
+                <label for="celular">Celular:</label>
+                <input type="text" id="celular" name="celular"><br>
+        
+                <button type="submit">Registrar</button>
+            </form>
+        </div>
+    </div>
 
     <section class="container">
         <h2 class="header">Puedes encontrar...</h2>
@@ -80,48 +116,7 @@
             </div>
         </div>
     </section>
-    <!-- 
-Registro -->
 
-<section class="intro">
-    <div class="loginPopup">
-        <div class="login-form">
-            <span class="closex" id="closeBtn">&times;</span>
-            <h1>Registration Form</h1>
-            <form id="registroForm">
-                <label for="rut">Rut:</label>
-                <input type="text" id="rut" name="rut"><br>
-
-                <label for="nombre">Name:</label>
-                <input type="text" id="nombre" name="nombre"><br>
-
-                <label for="apellidoPaterno">Last name:</label>
-                <input type="text" id="apellidoPaterno" name="apellidoPaterno"><br>
-
-                <label for="apellidoMaterno">Matriname:</label>
-                <input type="text" id="apellidoMaterno" name="apellidoMaterno"><br>
-                <div class="form-group">
-                    <label for="edad">Age:</label>
-                    <input type="number" id="edad" name="edad"><br>
-
-                    <label for="genero">Gender:</label>
-                    <select id="genero" name="genero">
-                        <option value="">Opcions</option>
-                        <option value="masculino">Male</option>
-                        <option value="femenino">Female</option>
-                        <option value="otro">uhg...</option>
-                    </select><br>
-                </div>
-
-                <label for="celular">Phone:</label>
-                <input type="text" id="celular" name="celular"><br>
-
-                <button type="submit">Register</button>
-
-            </form>
-
-        </div>
-    </div>
 
     <section class="container">
         <h2 class="header">Accede a nuevos benificios!</h2>
@@ -225,17 +220,32 @@ Registro -->
     <script src="app.js"></script>
     <script src="validation.js"></script>
     <script>
-      document.getElementById('registroForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent the form from being submitted
+     // Get the modal
+var modal = document.getElementById("myModal");
 
-    var loginPopup = document.querySelector('.loginPopup');
-    loginPopup.style.display = 'block'; // Show the .loginPopup div
-});
+// Get the button that opens the modal
+var btn = document.querySelector(".Regbtn");
 
-document.getElementById('closeBtn').addEventListener('click', function() {
-    var loginPopup = document.querySelector('.loginPopup');
-    loginPopup.style.display = 'none'; // Hide the .loginPopup div when the close button is clicked
-});
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
     </script>
 </body>
 
