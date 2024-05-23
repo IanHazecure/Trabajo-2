@@ -17,7 +17,7 @@ let products = [
     {
         id: 1,
         name: 'PRODUCT NAME 1',
-        image: '1.PNG',
+        image: 'https://i.pinimg.com/564x/00/90/aa/0090aa0bfdd73eea5cc79daaf19596c9.jpg',
         price: 120000
     },
     {

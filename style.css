@@ -293,7 +293,6 @@ section .header{
 }
 
 footer{
-    position: relative;
     display: grid;
     grid-template-columns: 400px repeat(3, 1fr);
     gap: 2rem;
@@ -399,9 +398,8 @@ footer .column > a:hover{
 
 
 
-
 .loginPopup {
-
+    display: none;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -413,11 +411,10 @@ footer .column > a:hover{
 }
 
 .login-form {
+    color: black;
     background-color: #f2f2f2;
     padding: 20px;
-    margin: 0 auto;
     width: 450px;
-    border: 1px solid #ccc;
     border-radius: 4px;
 }
 .login-form h1 {
@@ -432,7 +429,7 @@ footer .column > a:hover{
 }
 
 .closex {
-padding-left: 400px;
+    padding-left: 400px;
     font-size: 30px;
     font-weight: bold;
     color: #aaa;
@@ -445,33 +442,53 @@ padding-left: 400px;
 
 .login-form label {
     display: block;
-    margin: 10px 0 5px 0;
+    margin: 10px 5px 10px;
+    color: black;
+
+}
+.login-form select option {
     color: black;
 }
+.login-form select {
+    color: rgb(0, 0, 0); 
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.login-form input#edad {
+    color: rgb(0, 0, 0); 
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
 
-
-.login-form input[type="text"],
-.login-form input[type="password"] {
+.login-form input[type="text"]{
+    color: black;
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
-
 }
 
-.login-form input[type="submit"] {
+.login-form button[type="submit"] {
+    font-family: poppins;
     background-color: #4CAF50;
-    color: black;
+    color: white; 
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
-    cursor: pointer;
-    font-family: Poppins, sans-serif;
+    cursor: pointer; 
     width: 100%;
 }
 
-.login-form input[type="submit"]:hover {
-    background-color: #45a049;
+.login-form button[type="submit"]:hover {
+    opacity: 0.8; 
 }
