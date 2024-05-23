@@ -396,68 +396,75 @@ footer .column > a:hover{
         grid-template-columns: 1fr 150px;
     }
 }
-
-footer {
-    grid-template-columns: 1fr 150px;
-    background-color: #f8f9fa;
-    color: #212529;
-}
-body::before {
-    content: "";
-    display: block;
-    position: fixed;
-    top: 0;
+.modal {
+    display: none;
+    color: black;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-} 
-form {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 300px;
-    margin: 0 auto;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    color: black;
+    background-color: #fefefe;
+    margin: 5% auto; 
     padding: 20px;
-    border: 1px solid #ced4da;
-    background-color: #ffffff;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border: 1px solid #888;
+    width: 30%; /* Could be more or less, depending on screen size */
 }
 
-form label {
-    display: block;
-    margin-top: 10px;
-    font-size: 0.9em;
-    color: #212529;
+.close {
+    color: #ff0000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
 
-form input, form select {
-    width: 100%;
-    padding: 0.375rem 0.75rem;
-    margin-top: 5px;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    font-size: 1em;
-    color: #495057;
-}
-
-form button {
-    display: block;
-    width: 100%;
-    margin-top: 10px;
-    padding: 0.375rem 0.75rem;
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    border-radius: 0.25rem;
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
     cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.15s ease-in-out;
 }
 
-form button:hover {
-    background-color: #0056b3;
+#registroForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#registroForm label {
+    color: black;
+    margin-bottom: 5px;
+}
+
+#registroForm input, #registroForm select {
+    color: black;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+option {
+    color: black;
+}
+#genero option {
+    color: black;
+}
+#registroForm button {
+    
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#registroForm button:hover {
+    background-color: #45a049;
 }

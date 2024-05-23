@@ -26,7 +26,7 @@
             <li id="link2" class="link"><a href="#">Contacto</a></li>
             <li id="link3" class="link"><a href="#">About</a></li>
         </ul>
-        <button class="Regbtn">Registrate</button>
+        <button class="Regbtn">Regitrarse</button>
     </nav>
 
     <header class="container">
@@ -45,7 +45,40 @@
         </div>
     </header>
    
-
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeBtn">&times;</span>
+            <form id="registroForm">
+                <label for="rut">Rut:</label>
+                <input type="text" id="rut" name="rut"><br>
+        
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre"><br>
+        
+                <label for="apellidoPaterno">Apellido Paterno:</label>
+                <input type="text" id="apellidoPaterno" name="apellidoPaterno"><br>
+        
+                <label for="apellidoMaterno">Apellido Materno:</label>
+                <input type="text" id="apellidoMaterno" name="apellidoMaterno"><br>
+        
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad"><br>
+        
+                <label for="genero">Género:</label>
+                <select id="genero" name="genero">
+                    <option value="">Seleccione</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                </select><br>
+        
+                <label for="celular">Celular:</label>
+                <input type="text" id="celular" name="celular"><br>
+        
+                <button type="submit">Registrar</button>
+            </form>
+        </div>
+    </div>
     <section class="container">
         <h2 class="header">Puedes encontrar...</h2>
         <div class="features">
@@ -187,15 +220,13 @@
     <script src="app.js"></script>
     <script src="validation.js"></script>
     <script>
-   
-// Get the modal
 var modal = document.getElementById('myModal');
 
 // Get the button that opens the modal
-var btn = document.getElementById('myBtn');
+var btn = document.getElementById('Regbtn');
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName('close')[0];
+var span = document.getElementsByClassName('closeBtn')[0];
 
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
@@ -214,40 +245,6 @@ window.onclick = function(event) {
   }
 }
     </script>
+
 </body>
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <form id="registroForm">
-            
-            <label for="rut">Rut:</label>
-            <input type="text" id="rut" name="rut"><br>
-    
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre"><br>
-    
-            <label for="apellidoPaterno">Apellido Paterno:</label>
-            <input type="text" id="apellidoPaterno" name="apellidoPaterno"><br>
-    
-            <label for="apellidoMaterno">Apellido Materno:</label>
-            <input type="text" id="apellidoMaterno" name="apellidoMaterno"><br>
-    
-            <label for="edad">Edad:</label>
-            <input type="number" id="edad" name="edad"><br>
-    
-            <label for="genero">Género:</label>
-            <select id="genero" name="genero">
-                <option value="">Seleccione</option>
-                <option value="masculino">Masculino</option>
-                <option value="femenino">Femenino</option>
-                <option value="otro">Otro</option>
-            </select><br>
-    
-            <label for="celular">Celular:</label>
-            <input type="text" id="celular" name="celular"><br>
-    
-            <button type="submit">Registrar</button>
-        </form>
-    </div>
-</div>
 </html>
