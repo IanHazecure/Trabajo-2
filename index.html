@@ -225,16 +225,17 @@ Registro -->
     <script src="app.js"></script>
     <script src="validation.js"></script>
     <script>
-        // aqui va el script del botoncito de registrarse, notese que originalmente era un 
-            // login por eso mantiene el nombre 
-            document.getElementById("Regbtn").addEventListener("click", function () {
-                document.querySelector(".loginPopup").style.display = "flex";
-            });
+      document.getElementById('registroForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent the form from being submitted
 
-            document.getElementById("closeBtn").addEventListener("click", function () {
-                document.querySelector(".loginPopup").style.display = "none";
-            });
-        
+    var loginPopup = document.querySelector('.loginPopup');
+    loginPopup.style.display = 'block'; // Show the .loginPopup div
+});
+
+document.getElementById('closeBtn').addEventListener('click', function() {
+    var loginPopup = document.querySelector('.loginPopup');
+    loginPopup.style.display = 'none'; // Hide the .loginPopup div when the close button is clicked
+});
     </script>
 </body>
 

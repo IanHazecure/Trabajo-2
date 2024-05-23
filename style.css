@@ -275,6 +275,13 @@ section .header{
 }
 
 .pricing .card button{
+    font-family: poppins;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
     color: #fff;
     background-color: transparent;
     border: 2px solid #fff;
