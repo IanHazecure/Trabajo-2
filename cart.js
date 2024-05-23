@@ -2,10 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let iconCart = document.querySelector('.icon-cart');
     let closeCart = document.querySelector('#closeCart');
     let body = document.querySelector('body');
-    let listCatHTML = document.querySelector('.listCat');
-
-    let listCats = [];
-
+    let list = document.querySelector('.list');
+    let listCard = document.querySelector('.listCard');
 
     if (iconCart) {
         iconCart.addEventListener('click', () => {
@@ -141,12 +139,12 @@ let products = [
     function initApp(){
         products.forEach((value, key)=>{
             let newDiv = document.createElement('div');
-            list.appendChild(newDiv);`
+            newDiv.innerHTML = `
             <img src="${value.image}"/>
             <div class="name">${value.name}</div>
             <div class="description">${value.description}</div>
             <button onclick="addToCart(${value.id})">Add to Cart</button>
-            `
+            `;
         })
 
     }
