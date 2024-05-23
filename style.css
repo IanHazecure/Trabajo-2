@@ -91,7 +91,7 @@ nav{
 
 .blur{
     position: absolute;
-    box-shadow: 0 0 1000px 50px #ffffff;
+    box-shadow: 0 0 1000px 60px #00ff6a;
     z-index: -100;
 }
 

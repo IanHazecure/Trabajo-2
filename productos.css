@@ -8,6 +8,13 @@
     border: none;
     box-sizing: border-box;
 }
+
+.blur{
+    position: absolute;
+    box-shadow: 0 0 1000px 60px #00ff6a;
+    z-index: -100;
+}
+
 .nav-logo h1{
     font-size: 30px;
     font-weight: 700;
@@ -120,12 +127,12 @@ header .shopping span{
     text-align: center;
     background-color: #DCE0E1;
     padding: 20px;
+    margin-bottom: 20%;
     box-shadow: 3px 3px 3px 3px black;
     letter-spacing: 1px;
 }
 .list .item img{
-    width: 90%;
-    height: 430px;
+    width: 100%;
     object-fit: cover;
 }
 .list .item .title{
