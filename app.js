@@ -52,21 +52,21 @@ let products = [
     },
     {
         id: 7,
-        name: 'Areca',
-        image: '6.PNG',
-        price: 17000
+        name: 'Ficus Lyrata XL',
+        image: '7.PNG',
+        price: 70000
     },
     {
         id: 8,
-        name: 'Areca',
-        image: '6.PNG',
-        price: 17000
+        name: 'Limonero',
+        image: '8.PNG',
+        price: 20000
     },
     {
         id: 9,
-        name: 'Areca',
-        image: '6.PNG',
-        price: 17000
+        name: 'Alocasia California',
+        image: '9.PNG',
+        price: 60000
     }
    
 ];
