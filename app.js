@@ -1,149 +1,108 @@
-let listProductHTML = document.querySelector('.listProduct');
-let listCartHTML = document.querySelector('.listCart');
-let iconCart = document.querySelector('.icon-cart');
-let iconCartSpan = document.querySelector('.icon-cart span');
+let openShopping = document.querySelector('.shopping');
+let closeShopping = document.querySelector('.closeShopping');
+let list = document.querySelector('.list');
+let listCard = document.querySelector('.listCard');
 let body = document.querySelector('body');
-let closeCart = document.querySelector('.close');
-let products = [];
-let cart = [];
+let total = document.querySelector('.total');
+let quantity = document.querySelector('.quantity');
 
-// Gracias a un amigo de la Santa Maria logre que me funcionase el showcart  .u.u
-
-iconCart.addEventListener('click', () => {
-    body.classList.toggle('showCart');
+openShopping.addEventListener('click', ()=>{
+    body.classList.add('active');
 })
-closeCart.addEventListener('click', () => {
-    body.classList.toggle('showCart');
+closeShopping.addEventListener('click', ()=>{
+    body.classList.remove('active');
 })
 
-    const addDataToHTML = () => {
-
-// aca reemplaza el contrenido de las cards con el contenido que tengo en el json 
-        if(products.length > 0) 
-        {
-            products.forEach(product => {
-                let newProduct = document.createElement('div');
-                newProduct.dataset.id = product.id;
-                newProduct.classList.add('item');
-                newProduct.innerHTML = 
-                `<img src="${product.image}" alt="">
-                <h1>${product.name}</h1>
-                <h2>${product.description}</h2>
-                <div class="price">$${product.price}</div>
-                <button class="addCart">Adopt</button>`;
-                listProductHTML.appendChild(newProduct);
-            });
-        }
+let products = [
+    {
+        id: 1,
+        name: 'PRODUCT NAME 1',
+        image: '1.PNG',
+        price: 120000
+    },
+    {
+        id: 2,
+        name: 'PRODUCT NAME 2',
+        image: '2.PNG',
+        price: 120000
+    },
+    {
+        id: 3,
+        name: 'PRODUCT NAME 3',
+        image: '3.PNG',
+        price: 220000
+    },
+    {
+        id: 4,
+        name: 'PRODUCT NAME 4',
+        image: '4.PNG',
+        price: 123000
+    },
+    {
+        id: 5,
+        name: 'PRODUCT NAME 5',
+        image: '5.PNG',
+        price: 320000
+    },
+    {
+        id: 6,
+        name: 'PRODUCT NAME 6',
+        image: '6.PNG',
+        price: 120000
     }
-
-    // el add to cart se lo saque a un indio de YT
-    listProductHTML.addEventListener('click', (event) => {
-        let positionClick = event.target;
-        if(positionClick.classList.contains('addCart')){
-            let id_product = positionClick.parentElement.dataset.id;
-            addToCart(id_product);
-        }
-    })
-const addToCart = (product_id) => {
-    let positionThisProductInCart = cart.findIndex((value) => value.product_id == product_id);
-    if(cart.length <= 0){
-        cart = [{
-            product_id: product_id,
-            quantity: 1
-        }];
-    }else if(positionThisProductInCart < 0){
-        cart.push({
-            product_id: product_id,
-            quantity: 1
-        });
-    }else{
-        cart[positionThisProductInCart].quantity = cart[positionThisProductInCart].quantity + 1;
-    }
-    addCartToHTML();
-    addCartToMemory();
-}
-const addCartToMemory = () => {
-    localStorage.setItem('cart', JSON.stringify(cart));
-}
-const addCartToHTML = () => {
-    listCartHTML.innerHTML = '';
-    let totalQuantity = 0;
-    if(cart.length > 0){
-        cart.forEach(item => {
-            totalQuantity = totalQuantity +  item.quantity;
-            let newItem = document.createElement('div');
-            newItem.classList.add('item');
-            newItem.dataset.id = item.product_id;
-
-            let positionProduct = products.findIndex((value) => value.id == item.product_id);
-            let info = products[positionProduct];
-            listCartHTML.appendChild(newItem);
-            newItem.innerHTML = `
-            <div class="image">
-                    <img src="${info.image}">
-                </div>
-                <div class="name">
-                ${info.name}
-                </div>
-                <div class="totalPrice">$${info.price * item.quantity}</div>
-                <div class="quantity">
-                    <span class="minus"><</span>
-                    <span>${item.quantity}</span>
-                    <span class="plus">></span>
-                </div>
-            `;
-        })
-    }
-    iconCartSpan.innerText = totalQuantity;
-}
-// para restarle cantidad a los productos del carrito
-listCartHTML.addEventListener('click', (event) => {
-    let positionClick = event.target;
-    if(positionClick.classList.contains('minus') || positionClick.classList.contains('plus')){
-        let product_id = positionClick.parentElement.parentElement.dataset.id;
-        let type = 'minus';
-        if(positionClick.classList.contains('plus')){
-            type = 'plus';
-        }
-        changeQuantityCart(product_id, type);
-    }
-})
-const changeQuantityCart = (product_id, type) => {
-    let positionItemInCart = cart.findIndex((value) => value.product_id == product_id);
-    if(positionItemInCart >= 0){
-        let info = cart[positionItemInCart];
-        switch (type) {
-            case 'plus':
-                cart[positionItemInCart].quantity = cart[positionItemInCart].quantity + 1;
-                break;
-        
-            default:
-                let changeQuantity = cart[positionItemInCart].quantity - 1;
-                if (changeQuantity > 0) {
-                    cart[positionItemInCart].quantity = changeQuantity;
-                }else{
-                    cart.splice(positionItemInCart, 1);
-                }
-                break;
-        }
-    }
-    addCartToHTML();
-    addCartToMemory();
-}
-
-const initApp = () => {
-    // data prodcuto
-    fetch('products.json')
-    .then(response => response.json())
-    .then(data => {
-        products = data;
-        addDataToHTML();
-
-        // memoria del caritoxxxX
-        if(localStorage.getItem('cart')){
-            cart = JSON.parse(localStorage.getItem('cart'));
-            addCartToHTML();
-        }
+];
+let listCards  = [];
+function initApp(){
+    products.forEach((value, key) =>{
+        let newDiv = document.createElement('div');
+        newDiv.classList.add('item');
+        newDiv.innerHTML = `
+            <img src="image/${value.image}">
+            <div class="title">${value.name}</div>
+            <div class="price">${value.price.toLocaleString()}</div>
+            <button onclick="addToCard(${key})">Add To Card</button>`;
+        list.appendChild(newDiv);
     })
 }
 initApp();
+function addToCard(key){
+    if(listCards[key] == null){
+        // copy product form list to list card
+        listCards[key] = JSON.parse(JSON.stringify(products[key]));
+        listCards[key].quantity = 1;
+    }
+    reloadCard();
+}
+function reloadCard(){
+    listCard.innerHTML = '';
+    let count = 0;
+    let totalPrice = 0;
+    listCards.forEach((value, key)=>{
+        totalPrice = totalPrice + value.price;
+        count = count + value.quantity;
+        if(value != null){
+            let newDiv = document.createElement('li');
+            newDiv.innerHTML = `
+                <div><img src="image/${value.image}"/></div>
+                <div>${value.name}</div>
+                <div>${value.price.toLocaleString()}</div>
+                <div>
+                    <button onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
+                    <div class="count">${value.quantity}</div>
+                    <button onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
+                </div>`;
+                listCard.appendChild(newDiv);
+        }
+    })
+    total.innerText = totalPrice.toLocaleString();
+    quantity.innerText = count;
+}
+function changeQuantity(key, quantity){
+    if(quantity == 0){
+        delete listCards[key];
+    }else{
+        listCards[key].quantity = quantity;
+        listCards[key].price = quantity * products[key].price;
+    }
+    reloadCard();
+}
