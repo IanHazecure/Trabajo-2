@@ -7,6 +7,7 @@ let closeCart = document.querySelector('.close');
 let products = [];
 let cart = [];
 
+// Gracias a un amigo de la Santa Maria logre que me funcionase el showcart  .u.u
 
 iconCart.addEventListener('click', () => {
     body.classList.toggle('showCart');
@@ -17,7 +18,7 @@ closeCart.addEventListener('click', () => {
 
     const addDataToHTML = () => {
 
-
+// aca reemplaza el contrenido de las cards con el contenido que tengo en el json 
         if(products.length > 0) 
         {
             products.forEach(product => {
@@ -34,6 +35,8 @@ closeCart.addEventListener('click', () => {
             });
         }
     }
+
+    // el add to cart se lo saque a un indio de YT
     listProductHTML.addEventListener('click', (event) => {
         let positionClick = event.target;
         if(positionClick.classList.contains('addCart')){
@@ -93,7 +96,7 @@ const addCartToHTML = () => {
     }
     iconCartSpan.innerText = totalQuantity;
 }
-
+// para restarle cantidad a los productos del carrito
 listCartHTML.addEventListener('click', (event) => {
     let positionClick = event.target;
     if(positionClick.classList.contains('minus') || positionClick.classList.contains('plus')){
@@ -129,14 +132,14 @@ const changeQuantityCart = (product_id, type) => {
 }
 
 const initApp = () => {
-    // get data product
+    // data prodcuto
     fetch('products.json')
     .then(response => response.json())
     .then(data => {
         products = data;
         addDataToHTML();
 
-        // get data cart from memory
+        // memoria del caritoxxxX
         if(localStorage.getItem('cart')){
             cart = JSON.parse(localStorage.getItem('cart'));
             addCartToHTML();

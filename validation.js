@@ -2,7 +2,7 @@ $(document).ready(function(){
     $("#registroForm").submit(function(event){
 
         event.preventDefault();
-        
+        // Es la validacion de usted con cambios para hacerlo mas "eficiente"
     
         var rut = $("#rut").val();
         var nombre = $("#nombre").val();
@@ -19,11 +19,12 @@ $(document).ready(function(){
         }
 
         
-        // ^ asserts the start of a line.
-        // [\d]+ matches one or more digits (0-9).
-        // [kK]? matches either a 'k' or 'K', and the ? makes it optional.
-        // $ asserts the end of a line.
-        // g is a flag that means global, so the pattern will be searched in the whole string.
+        // ^ inico de linea
+        // [\d]+ del 0 al 9 
+        // [kK]? cualquira de las 2 letras
+        // $ marca al final de la linea
+        // g =global
+        // esta muy bacan XD
 
 
 
@@ -54,7 +55,7 @@ $(document).ready(function(){
     });
 });
 
-
+//Funcion para el carrusel jeje creo sacarlo de stackoverflow iirc
 
 $(document).ready(function () {
     var currentSlide = 0;
