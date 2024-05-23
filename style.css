@@ -68,7 +68,7 @@ nav{
     width: 70%;
 }
 
-.btn{
+.Regbtn{
     font-family: poppins;
     padding: 1rem 2rem;
     font-size: 1rem;
@@ -79,7 +79,7 @@ nav{
     transition: all 0.3s ease;
 }
 
-.btn:hover{
+.Regbtn:hover{
     background-color: #b6660a;
 }
 

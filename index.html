@@ -24,7 +24,7 @@
             <li id="link2" class="link"><a href="#">Contacto</a></li>
             <li id="link3" class="link"><a href="#">About</a></li>
         </ul>
-        <button class="btn">Registrate</button>
+        <button class="Regbtn">Registrate</button>
     </nav>
 
     <header class="container">
@@ -36,7 +36,7 @@
                 Somos una fundación sin fines de lucro que se dedica a la jardinería,
                 tenemos de todo para tu jardín, desde plantas, arboles, decoraciones y mucho más.
             </p>
-            <button class="btn">Comienza Aquí</button>
+            <button class="Regbtn">Comienza Aquí</button>
         </div>
         <div class="image">
             <img src="https://cdn.pixabay.com/photo/2022/03/27/09/09/gardener-7094455_1280.png">
@@ -179,7 +179,18 @@
     </div>
 
 
-    <script src="app.js"></script>
+    <script src="app.js">
+
+        // aqui va el script del botoncito de registrarse, notese que originalmente era un 
+            // login por eso mantiene el nombre 
+            document.getElementById("Regbtn").addEventListener("click", function () {
+                document.querySelector(".loginPopup").style.display = "flex";
+            });
+
+            document.getElementById("closeBtn").addEventListener("click", function () {
+                document.querySelector(".loginPopup").style.display = "none";
+            });
+    </script>
 </body>
 
 </html>
