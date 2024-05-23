@@ -397,85 +397,81 @@ footer .column > a:hover{
     }
 }
 
+
+
+
 .loginPopup {
-    /* Style for your popup */
-    /* display: none; */
+
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
     position: fixed;
-    z-index: 1;
-    left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
 }
 
-.loginPopup-content {
-    /* Style for the content inside your popup */
-    background-color: #fefefe;
-    margin: 15% auto;
+.login-form {
+    background-color: #f2f2f2;
     padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    color: black; /* Make all text black */
-}
-/* Style for your registration form */
-#registroForm {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
-    background-color: #fefefe;
-    border: 1px solid #888;
-    border-radius: 5px;
-    color: black; /* Make all text black */
-    position: relative; /* Added to position the close button */
-}
-
-/* Style for your form labels */
-#registroForm label {
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-/* Style for your form inputs and select elements */
-#registroForm input, #registroForm select {
-    margin-bottom: 15px;
-    padding: 10px;
+    width: 450px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 4px;
+}
+.login-form h1 {
+    margin: 0 auto;
+    text-align: center;
+    color: black
 }
 
-/* Style for your form button */
-#registroForm button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.login-form h2 {
+    text-align: center;
+    color: black
 }
 
-/* Change button color when hovered over */
-#registroForm button:hover {
-    background-color: #45a049;
-}
-
-/* Style for your close button */
-.closeBtn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: black;
-    font-size: 28px;
+.closex {
+padding-left: 400px;
+    font-size: 30px;
     font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
 }
 
-.closeBtn:hover,
-.closeBtn:focus {
-    color: red;
-    text-decoration: none;
+.close:hover {
+    color: black;
+}
+
+.login-form label {
+    display: block;
+    margin: 10px 0 5px 0;
+    color: black;
+}
+
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+
+}
+
+.login-form input[type="submit"] {
+    background-color: #4CAF50;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
     cursor: pointer;
+    font-family: Poppins, sans-serif;
+    width: 100%;
+}
+
+.login-form input[type="submit"]:hover {
+    background-color: #45a049;
 }

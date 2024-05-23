@@ -54,6 +54,15 @@ $(document).ready(function(){
 
     });
 });
+window.onload = function() {
+    document.getElementById("Regbtn").addEventListener("click", function () {
+    document.querySelector(".loginPopup").style.display = "flex";
+    });
+
+    document.getElementById("closeBtn").addEventListener("click", function () {
+    document.querySelector(".loginPopup").style.display = "none";
+    });
+    }
 
 //Funcion para el carrusel jeje creo sacarlo de stackoverflow iirc
 
