@@ -292,6 +292,8 @@ section .header{
     border-color: #32a7dd;
 }
 
+/* FOOTER */
+
 footer{
     display: grid;
     grid-template-columns: 400px repeat(3, 1fr);
@@ -357,6 +359,9 @@ footer .column > a:hover{
     text-align: center;
 }
 
+/* FOOTER */
+
+
 @media (width < 900px){
     .nav-links{
         display: none;
@@ -396,6 +401,7 @@ footer .column > a:hover{
     }
 }
 
+/* registro */
 
 
 .loginPopup {
@@ -491,4 +497,28 @@ footer .column > a:hover{
 
 .login-form button[type="submit"]:hover {
     opacity: 0.8; 
+}
+
+
+
+
+.container{
+padding: 20px;
+display: center;
+justify-content: center;
+text-align: center;
+
+
+}
+
+.container h1{
+justify-content: center;
+align-items: center;
+padding: 20px;
+
+}
+.container h2{
+    padding: 20px;
+    justify-content: center;
+    font-weight: 100;
 }

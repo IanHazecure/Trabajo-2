@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -51,6 +52,8 @@
 
         </div>
     </div>
+</section>
+
 <body class="">
     <nav>
         <div class="nav-logo">
@@ -58,20 +61,20 @@
                 <h1>TuJardin.</h1>
             </a>
         </div>
-    
+
         <ul class="nav-links">
             <li class="link"><a href="index.html">Inicio</a></li>
             <li id="link1" class="link"><a href="productos.html">Productos</a></li>
-            <li id="link2" class="link"><a href="#">Contacto</a></li>
+            <li id="link2" class="link"><a href="contacto.html">Contacto</a></li>
             <li id="link3" class="link"><a href="#">About</a></li>
         </ul>
         <button class="Regbtn">Registrate</button>
-        
+
     </nav>
     <div class="container">
         <header>
             <span class="blur"></span>
-        <span class="blur"></span>
+            <span class="blur"></span>
             <h1>Todos los productos</h1>
             <div class="shopping">
                 <img src="image/shopping.svg">
@@ -80,7 +83,7 @@
         </header>
 
         <div class="list">
-          
+
         </div>
     </div>
     <div class="card">
@@ -92,20 +95,63 @@
             <div class="closeShopping">Close</div>
         </div>
     </div>
+</body>
+<footer class="container">
+    <span class="blur"></span>
+    <span class="blur"></span>
+    <div class="column">
+        <div class="logo">
+            <h1>DuocUc</h1>
+        </div>
+        <p>
+            Trabajo para DuocUc, proyecto de jardinería.
+        </p>
+        <div class="socials">
+            <a href="#"><i class="ri-youtube-line"></i></a>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+            <a href="#"><i class="ri-twitter-line"></i></a>
+        </div>
+    </div>
 
-    <script src="app.js"></script>
-    <script>
-    window.onload = function() {
-    document.querySelector(".Regbtn").addEventListener("click", function () {
-        document.querySelector(".loginPopup").style.display = "flex";
-    });
-}
+    <div class="column">
+        <h4>Compañía</h4>
+        <a href="#">Negocios</a>
+        <a href="#">Colaboraciones</a>
+        <a href="#">Red</a>
+    </div>
+    <div class="column">
+        <h4>Sobre Nosotros</h4>
+        <a href="#">Blogs</a>
+        <a href="#">Canales</a>
+        <a href="#">Patrocinadores</a>
+    </div>
+    <div class="column">
+        <h4>Contacto</h4>
+        <a href="#">Contáctanos</a>
+        <a href="#">Política de Privacidad</a>
+        <a href="#">Términos y Condiciones</a>
+    </div>
+</footer>
+
+<div class="copyright">
+    Copyright © 2024 Comunidad de jardinería.
+</div>
+
+
+<script src="app.js"></script>
+<script>
+    window.onload = function () {
+        document.querySelector(".Regbtn").addEventListener("click", function () {
+            document.querySelector(".loginPopup").style.display = "flex";
+        });
+    }
 
     document.getElementById("closeBtn").addEventListener("click", function () {
         document.querySelector(".loginPopup").style.display = "none";
     });
 
 
-    </script>
+</script>
 </body>
+
 </html>
